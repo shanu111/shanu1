@@ -1,11 +1,13 @@
 {
   "User": {
-    "id": 1402275,
-    "username": "leehaisen01",
-    "name": "Hassan Taj",
-    "email": "leehaisen01@gmail.com",
-    "new_portrait": null,
-    "host": "https://gitlab.com",
-    "two_factor_enabled": false
+    "Id": 1402275,
+    "Username": "leehaisen01",
+    "Name": "Hassan Taj",
+    "Email": "leehaisen01@gmail.com",
+    "AvatarUrl": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/1402275/avatar.png",
+    "PrivateToken": "40e97f652afa7338b5ef4318fef54c24782701b69c59e0eb858e202a3f314350",
+    "Host": "https://gitlab.com",
+    "TwoFactorEnabled": false,
+    "ApiVersion": 3
   }
 }
