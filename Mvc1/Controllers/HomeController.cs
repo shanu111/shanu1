@@ -64,6 +64,7 @@ namespace Mvc1.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
+            // changed here too
             Advertisement a = new AdvertisementHandler().Getadvertisemnt(id);
             ViewBag.Ad = a;
             return View();
@@ -73,6 +74,7 @@ namespace Mvc1.Controllers
         [HttpPost]
         public ActionResult Edit(FormCollection data)
         {
+            // my changes
             var ad = new AdvertisementHandler().Getadvertisemnt(Convert.ToInt32(data["Ad"]));
             ad.Status = new AdStatus { Id = Convert.ToInt32(data["Status"]) };
             new AdvertisementHandler().Update(ad.Id, ad);
