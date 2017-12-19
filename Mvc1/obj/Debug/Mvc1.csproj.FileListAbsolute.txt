@@ -54,3 +54,7 @@ C:\Users\shabbir\Desktop\Mvc1\Mvc1\Mvc1\bin\System.Web.Mvc.xml
 C:\Users\shabbir\Desktop\Mvc1\Mvc1\Mvc1\obj\Debug\Mvc1.csprojResolveAssemblyReference.cache
 C:\Users\shabbir\Desktop\Mvc1\Mvc1\Mvc1\obj\Debug\Mvc1.dll
 C:\Users\shabbir\Desktop\Mvc1\Mvc1\Mvc1\obj\Debug\Mvc1.pdb
+E:\LEE_OnlineRepositories\HelpOthersRepositories\shanu1\Mvc1\obj\Debug\Mvc1.csprojResolveAssemblyReference.cache
+E:\LEE_OnlineRepositories\HelpOthersRepositories\shanu1\Mvc1\obj\Debug\Mvc1.csproj.CoreCompileInputs.cache
+E:\LEE_OnlineRepositories\HelpOthersRepositories\shanu1\Mvc1\obj\Debug\Mvc1.dll
+E:\LEE_OnlineRepositories\HelpOthersRepositories\shanu1\Mvc1\obj\Debug\Mvc1.pdb
