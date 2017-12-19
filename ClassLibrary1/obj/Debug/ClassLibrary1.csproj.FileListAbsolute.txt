@@ -10,3 +10,14 @@ C:\Users\shabbir\Desktop\Entity classes\ConsoleApp1\ClassLibrary1\obj\Debug\Clas
 C:\Users\shabbir\Desktop\Entity classes\ConsoleApp1\ClassLibrary1\bin\Debug\MySql.Data.dll
 C:\Users\shabbir\Desktop\Entity classes\ConsoleApp1\ClassLibrary1\bin\Debug\MySql.Data.Entity.EF6.dll
 C:\Users\shabbir\Desktop\Entity classes\ConsoleApp1\ClassLibrary1\obj\Debug\ClassLibrary1.csprojResolveAssemblyReference.cache
+E:\LEE_OnlineRepositories\HelpOthersRepositories\shanu1\ClassLibrary1\bin\Debug\ClassLibrary1.dll.config
+E:\LEE_OnlineRepositories\HelpOthersRepositories\shanu1\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+E:\LEE_OnlineRepositories\HelpOthersRepositories\shanu1\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+E:\LEE_OnlineRepositories\HelpOthersRepositories\shanu1\ClassLibrary1\bin\Debug\EntityFramework.dll
+E:\LEE_OnlineRepositories\HelpOthersRepositories\shanu1\ClassLibrary1\bin\Debug\EntityFramework.SqlServer.dll
+E:\LEE_OnlineRepositories\HelpOthersRepositories\shanu1\ClassLibrary1\bin\Debug\EntityFramework.xml
+E:\LEE_OnlineRepositories\HelpOthersRepositories\shanu1\ClassLibrary1\bin\Debug\EntityFramework.SqlServer.xml
+E:\LEE_OnlineRepositories\HelpOthersRepositories\shanu1\ClassLibrary1\obj\Debug\ClassLibrary1.csprojResolveAssemblyReference.cache
+E:\LEE_OnlineRepositories\HelpOthersRepositories\shanu1\ClassLibrary1\obj\Debug\ClassLibrary1.csproj.CoreCompileInputs.cache
+E:\LEE_OnlineRepositories\HelpOthersRepositories\shanu1\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+E:\LEE_OnlineRepositories\HelpOthersRepositories\shanu1\ClassLibrary1\obj\Debug\ClassLibrary1.pdb

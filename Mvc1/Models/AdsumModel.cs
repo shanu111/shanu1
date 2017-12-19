@@ -11,7 +11,7 @@ namespace Mvc1.Models
     {
         public enum AdvertisementStatus
         {
-            Pending, Approved, Disabled
+            Pending=1, Approved=2, Disabled=3
         }
         public int Id { get; set; }
 
@@ -20,7 +20,7 @@ namespace Mvc1.Models
         public float Price { get; set; }
 
         public string ImageUrl { get; set; }
-        public AdvertisementStatus status { get; set; }
+        public AdStatus status { get; set; }
 
 
     }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using static ClassLibrary1.pakad.Advertisement;
+using static Mvc1.Models.AdsumModel;
 
 namespace Mvc1.Models
 {
@@ -36,7 +37,8 @@ namespace Mvc1.Models
                 m.Id = c.Id;
                 m.Title = c.Title;
                 m.Price = c.Price;
-
+                m.status = c.Status;
+               
 
                 m.ImageUrl = (c.Images.Count > 0) ? c.Images.First().Url : "/images/images.png";
                 temp.Add(m);

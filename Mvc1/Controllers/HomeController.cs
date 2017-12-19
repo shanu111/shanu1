@@ -55,7 +55,6 @@ namespace Mvc1.Controllers
 
             new AdvertisementHandler().Delete(a);
 
-
             return RedirectToAction("Admin", "Home");
             
         }
@@ -66,22 +65,21 @@ namespace Mvc1.Controllers
         public ActionResult Edit(int id)
         {
             Advertisement a = new AdvertisementHandler().Getadvertisemnt(id);
-
+            ViewBag.Ad = a;
             return View();
 
         }
 
         [HttpPost]
-        public ActionResult Edit(AdStatus data)
+        public ActionResult Edit(FormCollection data)
         {
-
-            
-            data.Id = 2;
-           
+            var ad = new AdvertisementHandler().Getadvertisemnt(Convert.ToInt32(data["Ad"]));
+            ad.Status = new AdStatus { Id = Convert.ToInt32(data["Status"]) };
+            new AdvertisementHandler().Update(ad.Id, ad);
             return RedirectToAction("Admin");
         }
 
-
+        
 
         [HttpGet]
 

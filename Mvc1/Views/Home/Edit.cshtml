@@ -8,20 +8,21 @@
 @using ClassLibrary1.pakad
 
 @{
-    
+
     IEnumerable<StatusModel> stat = new CategoryHandler().GetStatus().ToselectStatusList();
 
-
+    Advertisement ad = ViewBag.Ad;
 }
 
 @using (Html.BeginForm("Edit", "Home", FormMethod.Post, new { id = "edit", enctype = "multipart/form-data" }))
 { 
 
+    @Html.Hidden("Ad",ad.Id)
     <td class="col-lg-4">
-        <select>
+        <select id="Status" name="Status">
             @foreach (var s in stat)
             {
-                <option>@s.Name</option>
+                <option value="@s.Id">@s.Name</option>
             }
         </select>
 

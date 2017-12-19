@@ -41,8 +41,9 @@
                 <th class="col-lg-1">&nbsp;</th>
                 <th class="col-lg-5">Product</th>
                 <th class="col-lg-2">Price</th>
-                <th class="col-lg-4">Actions</th>
                 <th class="col-lg-4">Status</th>
+                <th></th>
+                <th class="col-lg-4">Actions</th>
             </tr>
 
         </thead>
@@ -58,6 +59,7 @@
                         </td>
                         <td class="col-lg-5">@p.Title</td>
                         <td class="col-lg-2">@p.Price</td>
+                        <td class="col-lg-2">@p.status.Name</td>
                         <td class="col-lg-4">
                             <a href="#"  data-action="details"><span class="glyphicon glyphicon-search"></span></a>&nbsp;&nbsp;
                             <a href="#"  data-action="edit"><span class="glyphicon glyphicon-edit"></span></a>&nbsp;&nbsp;
