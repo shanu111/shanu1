@@ -1,0 +1,40 @@
+﻿body {
+    padding-top: 70px;
+}
+
+.prod-sum-item {
+    margin: 15px 0px;
+    padding: 15px;
+    border: solid 1px #e4e4e4;
+    text-align: center;
+}
+
+    .prod-sum-item h2 {
+        padding: 10px 0px;
+        margin: 0px;
+        font-size: 150%;
+        color: #ff0000;
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .prod-sum-item p {
+        padding: 0px 0px 10px 0px;
+        margin: 0px;
+    }
+
+.dgitem-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.mytab-pane {
+    padding: 15px;
+    border-right: solid 1px #e4e4e4;
+    border-left: solid 1px #e4e4e4;
+    border-bottom: solid 1px #e4e4e4;
+}
+
+
+.myimg-thumbnail {
+}

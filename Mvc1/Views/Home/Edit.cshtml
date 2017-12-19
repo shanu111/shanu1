@@ -1,0 +1,36 @@
+﻿@using Mvc1.Models
+@model IEnumerable<AdsumModel>
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using ClassLibrary1.pakad
+
+@{
+    
+    IEnumerable<StatusModel> stat = new CategoryHandler().GetStatus().ToselectStatusList();
+
+
+}
+
+@using (Html.BeginForm("Edit", "Home", FormMethod.Post, new { id = "edit", enctype = "multipart/form-data" }))
+{ 
+
+    <td class="col-lg-4">
+        <select>
+            @foreach (var s in stat)
+            {
+                <option>@s.Name</option>
+            }
+        </select>
+
+
+        <h1>Do you want  to approve this product?</h1>
+        <div class="form-group" style="margin:10px 0px;">
+            <button type="submit" class="btn btn-primary"> <span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+            <button type="reset" class="btn btn-default"> <span class="glyphicon glyphicon-remove"></span> Cancel</button>
+        </div>
+    </td>
+
+}

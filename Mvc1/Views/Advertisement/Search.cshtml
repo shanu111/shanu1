@@ -1,0 +1,56 @@
+﻿
+
+
+
+
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+    ViewBag.Title = "Search";
+    
+
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading"><strong>Search</strong></div>
+    <div class="panel-body">
+        <div class="form-group form-inline">
+            <div id="catdiv" class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-tags"></span></span>
+                @Html.DropDownList("Category", (IEnumerable<SelectListItem>)ViewBag.Categories, "- Select Cataegory", new { @class = "form-control" })
+            </div>
+            <div id="subcatdiv" class="input-group">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section MyScript{
+    
+    <script type="text/javascript">
+
+    $(function () {
+
+        $("#Category").change(function () {
+            var cid = $(this).select("option-selected").val();
+
+            $.ajax({
+
+                url: "/advertisement/subcategories/" + cid
+            }).done(function (result) {
+                $("#subcatdiv").html(result);
+
+            });
+
+
+        });
+
+
+
+    });
+            
+    
+    </script>
+    }
+    
+   

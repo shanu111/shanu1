@@ -1,0 +1,8 @@
+﻿@using Mvc1.Models
+@{ 
+    Layout = "~/Views/Shared/Layout.cshtml";
+    List<AdsumModel> adv = ViewBag.Newad;
+}
+
+
+@Html.Partial("~/views/Shared/Adsum.cshtml", adv)

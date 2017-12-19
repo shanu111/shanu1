@@ -1,0 +1,4 @@
+﻿@model Mvc1.Models.DDLModel
+
+<span class="input-group-addon"><span class="glyphicon @Model.Glypicon"></span></span>
+@Html.DropDownList(Model.Name,Model.Values,Model.Caption, new { @class="form-control"})

@@ -1,0 +1,84 @@
+﻿@using Mvc1.Models
+@model IEnumerable<AdsumModel>
+
+
+@using ClassLibrary1.pakad
+
+@{
+    IEnumerable<CategoryModel> Cat = new CategoryHandler().Getcategory().ToselectCatModelList();
+    IEnumerable<StatusModel> stat = new CategoryHandler().GetStatus().ToselectStatusList();
+
+
+}
+
+<section id="rightsec" class="col-lg-3 col-md-6 col-sm-9 col-xs-12">
+    
+
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-info"><a href="/Home/Admin">Categories</a></li>
+            
+          @foreach (var c in Cat)
+            {
+
+            <li class="list-group-item "><a href="/Home/ByCategoryGrid/@c.Id">@c.Name</a></li>
+
+
+
+            }
+        </ul>
+    
+
+</section>
+
+
+<section id="leftsec" class="col-lg-9 col-md-6 col-sm-3 hidden-xs">
+    <table class="table table-bordered">
+        <thead>
+            <tr class="bg-primary">
+                <th colspan="5">Manage Products [ <a id="createlnk" class="bg-danger" href="/Advertisement/postAd" data-action="create"> <span class="glyphicon glyphicon-plus-sign "></span> Add New Product</a> ]</th>
+            </tr>
+            <tr class="bg-primary">
+                <th class="col-lg-1">&nbsp;</th>
+                <th class="col-lg-5">Product</th>
+                <th class="col-lg-2">Price</th>
+                <th class="col-lg-4">Actions</th>
+                <th class="col-lg-4">Status</th>
+            </tr>
+
+        </thead>
+        <tbody>
+
+            @if (Model != null)
+            {
+                foreach (var p in Model)
+                {
+                    <tr>
+                        <td class="col-lg-1">
+                            <img src="@p.ImageUrl" alt="one" class="img-responsive" style="height:20px" />
+                        </td>
+                        <td class="col-lg-5">@p.Title</td>
+                        <td class="col-lg-2">@p.Price</td>
+                        <td class="col-lg-4">
+                            <a href="#"  data-action="details"><span class="glyphicon glyphicon-search"></span></a>&nbsp;&nbsp;
+                            <a href="#"  data-action="edit"><span class="glyphicon glyphicon-edit"></span></a>&nbsp;&nbsp;
+                            <a href="/Home/Delete/@p.Id" class="deletelnk" data-action="delete"><span class="glyphicon glyphicon-remove"></span></a>&nbsp;&nbsp;
+                        </td>
+                        <td class="col-lg-4">
+                            @*<select>
+                                @foreach (var s in stat)
+                                {
+                                        <option>@s.Name</option>
+                                }
+                            </select>*@
+
+                            <label><a href="~/Home/Edit/@p.Id">Edit</a></label>
+
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+</section>
+

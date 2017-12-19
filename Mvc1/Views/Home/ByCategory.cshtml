@@ -1,0 +1,17 @@
+﻿@using Mvc1.Models
+@model AdsumModel
+
+
+@{
+    ViewBag.Title = "ByCategory";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    List<AdsumModel> ad = ViewBag.Cid;
+
+}
+
+@Html.Partial("~/views/Shared/Adsum.cshtml", ad)
+
+
+
+
+

@@ -1,0 +1,26 @@
+﻿@using Mvc1.Models
+
+
+
+@model IEnumerable<AdsumModel>
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    List<AdsumModel> adv = ViewBag.Newad;
+}
+
+
+@Html.Partial("~/Views/Shared/AdminGrid.cshtml", adv);
+
+
+
+   
+    
+
+
+
+
+
+
+
+    }

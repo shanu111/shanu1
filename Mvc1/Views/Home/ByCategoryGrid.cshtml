@@ -1,0 +1,15 @@
+﻿@using Mvc1.Models
+
+
+
+
+@model IEnumerable<AdsumModel>
+@{
+    ViewBag.Title = "Category Grid";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    List<AdsumModel> adv = ViewBag.Cid;
+}
+
+
+
+@Html.Partial("~/Views/Shared/AdminGrid.cshtml", adv);

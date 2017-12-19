@@ -1,0 +1,159 @@
+﻿@using System.Collections.Generic
+@using Mvc1.Models
+@model LoginModel
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+    ViewBag.Title = "Post Advertisement";
+    AlertModel alert = (AlertModel)TempData["AlertMessage"];
+}
+@if (alert!=null)
+{
+    @Html.Partial("/Views/Shared/AlertView.cshtml",alert)
+}
+
+
+
+@using (Html.BeginForm("postAd", "Advertisement", FormMethod.Post, new { id = "postadvform", enctype = "multipart/form-data" }))
+{
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#generalpane" data-toggle="tab">General</a></li>
+        <li><a href="#descriptionpane" data-toggle="tab">Description</a></li>
+        <li><a href="#imagespane" data-toggle="tab">Images</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="generalpane" class="tab-pane mytabpane active">
+            <div class="form-group form-inline">
+                <div id="countrydiv" class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
+                    @Html.DropDownList("Country",(IEnumerable<SelectListItem>)ViewBag.CountryList, "- Select Country -", new { @class = "form-control" })
+                </div>
+                <div id="statediv" class="input-group">
+                </div>
+                <div id="citydiv" class="input-group">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-edit"></span></span>
+                    @Html.TextBox("AdvTitle", null, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group col-lg-2">
+                    <span class="input-group-addon"><strong>Rs.</strong></span>
+                    @Html.TextBox("Price", null, new { @class = "form-control", type = "number" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group col-lg-3">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    @Html.TextBox("Validity", null, new { @class = "form-control", type = "date" })
+                </div>
+            </div>
+            <div class="form-group form-inline">
+                <div id="categorydiv" class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-tags"></span></span>
+                    @Html.DropDownList("Category", (IEnumerable<SelectListItem>)ViewBag.Categories, "- Select Category -", new { @class = "form-control" })
+                </div>
+                <div id="subcatdiv" class="input-group">
+                </div>
+            </div>
+            <div class="form-group form-inline">
+                @foreach (var item in (List<SelectListItem>)ViewBag.Adtypes)
+                {
+                    <label style="font-weight:normal;padding-right:10px;"> @Html.RadioButton("Adtype", item.Value, item.Selected) @item.Text</label>
+                }
+            </div>
+            <div class="form-group form-inline">
+                <label style="font-weight:normal;padding-right:10px;"> @Html.CheckBox("Featured") Featured</label>
+                <label style="font-weight:normal">@Html.CheckBox("IsActive") This advertisement is acive</label>&nbsp;&nbsp;
+            </div>
+        </div>
+        <div id="descriptionpane" class="tab-pane mytabpane">
+            @Html.TextArea("Description", new { @class = "form-control", rows = 20, placeholder = "Advertisement Details" })
+        </div>
+        <div id="imagespane" class="tab-pane mytabpane">
+            <input id="file1" name="photo1" type="file" />
+            <input id="file1" name="photo2" type="file" />
+            <input id="file1" name="photo3" type="file" />
+            <input id="file1" name="photo4" type="file" />
+        </div>
+    </div>
+
+    <div class="form-group" style="margin:10px 0px;">
+        <button type="submit" class="btn btn-primary"> <span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+        <button type="reset" class="btn btn-default"> <span class="glyphicon glyphicon-remove"></span> Cancel</button>
+    </div>
+}
+
+
+@section Myscript
+    {
+    
+    <script type="text/javascript">
+        $(function () {
+            $("#Country").change(function () {
+
+                var cid = $(this).select("option:selected").val();
+               
+                $.ajax({
+                    url: "/locations/provinces/" + cid
+                }).done(function (result2) {
+                    $("#statediv").html(result2);
+
+
+                    $("#Province").change(function () {
+
+                        var pid = $(this).select("option:selected").val();
+                        $.ajax({
+                            url: "/locations/cities/" + pid
+                        }).done(function (result3) {
+                            $("#citydiv").html(result3);
+                        });
+                    });
+                });
+            });
+
+
+
+            $("#Category").change(function () {
+                var tid = $(this).select("option:selected").val();
+               
+                $.ajax({
+                    url: "/advertisement/subcategories/" + tid
+                }).done(function (result1) {
+                    $("#subcatdiv").html(result1);
+
+                });
+
+
+            });
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    }
+

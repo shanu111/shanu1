@@ -1,0 +1,8 @@
+﻿@using ClassLibrary1.user
+@{
+    User m = (User)Session[Webutil.CurrentUser];
+}
+
+<h1>@m.FullName</h1>
+<h2>@m.BirthDate</h2>
+<h3>@m.Email</h3>
